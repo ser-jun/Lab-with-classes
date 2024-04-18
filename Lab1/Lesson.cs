@@ -11,7 +11,7 @@ namespace Lab1
         protected string time;
         private string elem;
 
-        protected List<Lesson> lessons = new List<Lesson>();
+        public List<Lesson> lessons = new List<Lesson>();
         public string GetName() { return name; }
         public string GetDayOfWeek() { return dayOfWeek; }
         public string GetTime() { return time; }
@@ -109,12 +109,17 @@ namespace Lab1
                 default: return false;
             }
         }
-        
-      
-     
-       
-   
-       
+
+        public void AddObjToList(Lecture lec)
+        {
+            lessons.Add(lec);
+        }
+
+
+
+
+
+
     }
 
 
@@ -135,15 +140,15 @@ namespace Lab1
             topic = top;
             return topic;
         }
-       
-        public LaboratoryWork( string name, string dayOfWeek, string time, int numLab, string Top) : base (name, dayOfWeek, time)
+
+        public LaboratoryWork(string name, string dayOfWeek, string time, int numLab, string Top) : base(name, dayOfWeek, time)
         {
-          
+
             numberOfLaboratoryWork = numLab;
             topic = Top;
             Console.WriteLine("Вызван конструктор с параметрами для класса LaboratoryWork");
         }
-      
+
         public LaboratoryWork()
         {
             this.numberOfLaboratoryWork = 0;
@@ -167,7 +172,7 @@ namespace Lab1
         }
         public override void Add()
         {
-            
+
             Console.WriteLine("Введите номер лабораторной работы\n");
             int number = int.Parse(Console.ReadLine());
             Console.WriteLine("Введите тему лабораторной работы");
@@ -176,20 +181,20 @@ namespace Lab1
             LaboratoryWork labWork = new LaboratoryWork(base.name, base.dayOfWeek, base.time, number, topic);
             lessons.Add(labWork);
         }
-        
+
         public override void Show()
         {
 
-            for (int i = 0; i< lessons.Count-1; i++)
+            for (int i = 0; i < lessons.Count - 1; i++)
             {
                 Console.WriteLine($"Название предмета {name}, день недели {dayOfWeek}, время {time} ");
             }
-            
+
             foreach (var lab in lessons)
             {
-                if (lab is LaboratoryWork && lab!=null)
+                if (lab is LaboratoryWork && lab != null)
                 {
-                    LaboratoryWork labw=(LaboratoryWork)lab;
+                    LaboratoryWork labw = (LaboratoryWork)lab;
                     if (lab != null)
                     {
 
@@ -297,7 +302,7 @@ namespace Lab1
             {
                 Console.WriteLine($"Название предмета {name}, день недели {dayOfWeek}, время {time} ");
             }
-            for (int i = 0; i < lessons.Count-1; i++)
+            for (int i = 0; i < lessons.Count - 1; i++)
             {
                 Lecture lec = lessons[i] as Lecture;
                 if (lec != null)

@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Lab1
 {
-    internal class Shedule
+    public class Shedule
     {
 
         private string educationalInstitutionNumber;
@@ -12,7 +12,7 @@ namespace Lab1
         private string elem;
 
         public  List<Shedule> shedules = new List<Shedule>();
-        public List<Lesson> lessons = new List<Lesson>();
+        //public List<Lesson> lessons = new List<Lesson>();
         public Shedule()
         {
             this.educationalInstitutionNumber = null;

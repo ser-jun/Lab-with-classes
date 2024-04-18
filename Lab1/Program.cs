@@ -90,7 +90,9 @@ namespace Lab1
                         lecture.EditLesson();
                         break;
                     case 15:
-
+                        Lecture lecture1 = new Lecture();
+                        Shedule shedule2 = new Shedule();
+                        shedule2 = lecture1 + shedule2;
                         break;
 
                 }
