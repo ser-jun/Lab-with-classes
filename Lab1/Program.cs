@@ -95,14 +95,13 @@ namespace Lab1
                         Shedule shedule2 = new Shedule();
                         shedule2 = laba + shedule2;
 
-                        //Console.WriteLine($"Номер лабы: {laba.GetNumber()}"); костыль
+
 
                         for (int i = 0; i < shedule2.lessons.Count; i++)
                         {
-                            if (shedule2.lessons[i] is Lesson)
-                            {
-                                Console.WriteLine(shedule2.lessons[i] );
-                            }
+
+                            Console.WriteLine(shedule2.lessons[i]);
+
                         }
                         break;
                 }
@@ -110,7 +109,7 @@ namespace Lab1
 
             }
 
-        }   
+        }
 
     }
 }
