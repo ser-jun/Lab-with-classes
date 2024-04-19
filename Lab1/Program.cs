@@ -6,7 +6,7 @@ namespace Lab1
     {
         public void Menu()
         {
-          
+
             Console.WriteLine("1-Добавить расписание");
             Console.WriteLine("2-Просмотреть список расписаний");
             Console.WriteLine("3-Удалить расписание");
@@ -40,7 +40,7 @@ namespace Lab1
 
                 switch (a)
                 {
-                    
+
                     case 1:
                         shedule.Add();
 
@@ -63,7 +63,7 @@ namespace Lab1
                     case 6:
                         shedule.UseMoveConstructor(shedule1, shedule);
                         break;
-                   
+
                     case 7:
 
                         lab.Add();
@@ -90,17 +90,27 @@ namespace Lab1
                         lecture.EditLesson();
                         break;
                     case 15:
-                        Lecture lecture1 = new Lecture();
+                        Lecture lecture1 = new Lecture("asdasd", "sdasdasd");
+                        LaboratoryWork laba = new LaboratoryWork(2, "dffwdf");
                         Shedule shedule2 = new Shedule();
-                        shedule2 = lecture1 + shedule2;
-                        break;
+                        shedule2 = laba + shedule2;
 
+                        //Console.WriteLine($"Номер лабы: {laba.GetNumber()}"); костыль
+
+                        for (int i = 0; i < shedule2.lessons.Count; i++)
+                        {
+                            if (shedule2.lessons[i] is Lesson)
+                            {
+                                Console.WriteLine(shedule2.lessons[i] );
+                            }
+                        }
+                        break;
                 }
                 GC.Collect();
 
             }
 
-        }
+        }   
 
     }
 }

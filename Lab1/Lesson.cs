@@ -148,7 +148,13 @@ namespace Lab1
             topic = Top;
             Console.WriteLine("Вызван конструктор с параметрами для класса LaboratoryWork");
         }
+        public LaboratoryWork(int numLab, string Top)
+        {
 
+            numberOfLaboratoryWork = numLab;
+            topic = Top;
+            Console.WriteLine("Вызван конструктор с параметрами для класса LaboratoryWork");
+        }
         public LaboratoryWork()
         {
             this.numberOfLaboratoryWork = 0;

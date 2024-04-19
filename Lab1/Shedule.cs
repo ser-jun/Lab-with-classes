@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace Lab1
@@ -11,8 +12,9 @@ namespace Lab1
         private string address;
         private string elem;
 
-        public  List<Shedule> shedules = new List<Shedule>();
-        //public List<Lesson> lessons = new List<Lesson>();
+     
+        public List<Shedule> shedules = new List<Shedule>();
+        public List<Lesson> lessons = new List<Lesson>();
         public Shedule()
         {
             this.educationalInstitutionNumber = null;
@@ -96,7 +98,7 @@ namespace Lab1
                 shedules.Add(copiedShedule);
             }
         }
-       
+
         public void UseMoveConstructor(Shedule shed1, Shedule shed2)
         {
             Shedule moveShedule = new Shedule(shed1, shed2);
@@ -174,16 +176,16 @@ namespace Lab1
         }
 
 
-        public static Shedule operator +(Lesson less, Shedule shed)
+        public static Shedule operator +(Lesson les, Shedule shed)
         {
-            shed.lessons.Add(less);
-            return shed;
+            shed.lessons.Add(les);
+            return shed ;
         }
 
-        public static Shedule operator ++(Shedule shedule)
-        {
+        //public static Shedule operator ++(Shedule shedule)
+        //{
 
-            return null ;
-        }
+        //    return null;
+        //}
     }
 }
