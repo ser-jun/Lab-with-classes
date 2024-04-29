@@ -110,8 +110,15 @@ namespace Lab1
                         shedule3=shedule3 << d;
                         break;
                         case 18:
-
-                        break; 
+                        Lecture lecture1 = new Lecture("time", "str", 4);
+                        Lecture lecture2 = new Lecture("time", "str", 7);
+                        Console.WriteLine($"{lecture1 > lecture2}\n {lecture1 < lecture2} \n {lecture1==lecture2}\n {lecture1!=lecture2}");
+                        break;
+                    case 19:
+                        LaboratoryWork lab1 = new LaboratoryWork(2, "top");
+                        LaboratoryWork lab2 = new LaboratoryWork(5, "top1");
+                        Console.WriteLine($"{lab1 > lab2}\n {lab1<lab2} \n {lab1==lab2}\n {lab1!=lab2}");
+                        break;
                 }
                 GC.Collect();
 

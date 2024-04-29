@@ -256,14 +256,35 @@ namespace Lab1
                 }
             }
         }
+        public static bool operator <(LaboratoryWork lab1, LaboratoryWork lab2 )
+        {
+            return lab1.numberOfLaboratoryWork < lab2.numberOfLaboratoryWork;
+        }
+        public static bool operator >(LaboratoryWork lab1, LaboratoryWork lab2)
+        {
+            return lab1.numberOfLaboratoryWork > lab2.numberOfLaboratoryWork;
+        }
+        public static bool operator ==(LaboratoryWork lab1, LaboratoryWork lab2)
+        {
+            return lab1.numberOfLaboratoryWork == lab2.numberOfLaboratoryWork;
+        }
+        public static bool operator !=(LaboratoryWork lab1, LaboratoryWork lab2)
+        {
+            return lab1.numberOfLaboratoryWork!= lab2.numberOfLaboratoryWork;
+        }
     }
 
     public class Lecture : Lesson
     {
         private string timel;
         private string nameOfLector;
+        private int numOfLEctor;
         public string GetNameOfLector() { return nameOfLector; }
         public string GetTime() { return timel; }
+        public string GetNumOfLecture()
+        {
+            return nameOfLector;
+        }
         public string SetNameOfLector(string name)
         {
             return nameOfLector = name;
@@ -272,6 +293,11 @@ namespace Lab1
         public string SetTime(string newTime)
         {
             return timel = newTime;
+        }
+
+        public Lecture (string timel, string nameOfLector, int numOfLEctor) : this(timel, nameOfLector)
+        {
+            this.numOfLEctor = numOfLEctor;
         }
 
         public Lecture(string TimeLect, string nameLect)
@@ -358,6 +384,22 @@ namespace Lab1
                     }
                 }
             }
+        }
+        public static bool operator <(Lecture lec1, Lecture lec2)
+        {
+            return lec1.numOfLEctor < lec2.numOfLEctor;
+        }
+        public static bool operator >(Lecture lec1, Lecture lec2)
+        {
+            return lec1.numOfLEctor > lec2.numOfLEctor;
+        }
+        public static bool operator ==(Lecture lec1 , Lecture lec2)
+        {
+            return lec1.numOfLEctor == lec2.numOfLEctor;
+        }
+        public static bool operator !=(Lecture lec1, Lecture lec2)
+        {
+            return lec1.numOfLEctor != lec2.numOfLEctor;    
         }
     }
 }

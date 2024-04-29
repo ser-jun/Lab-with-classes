@@ -16,7 +16,7 @@ namespace Lab1
         public List<Lesson> lessons = new List<Lesson>();
         public Shedule[] sheduleArray = new Shedule[5];
 
-        int countArr = 0;
+        //int countArr = 0;
         public Shedule()
         {
             this.educationalInstitutionNumber = null;
@@ -54,10 +54,10 @@ namespace Lab1
             this.address = null;
             Console.WriteLine("Вызван деструктор");
         }
-        int GetCountArr()
-        {
-            return countArr;
-        }
+        //int GetCountArr()
+        //{
+        //    return countArr;
+        //}
         //void SetShedule(sheduleArray )
         //{
 
@@ -204,7 +204,7 @@ namespace Lab1
         public static Shedule operator <<(Shedule shed, int a)
         {
             Console.WriteLine($"Номер чего-то {shed.educationalInstitutionNumber} " +
-                $"адресс чего-то{shed.address}");
+                $"адресс чего-то {shed.address}");
             return shed;
         }
     }
