@@ -9,8 +9,8 @@ namespace Lab1
         protected string name;
         protected string dayOfWeek;
         protected string time;
-        private string elem;
 
+        public Lesson[] lessonArr = new Lesson[5];
         public List<Lesson> lessons = new List<Lesson>();
         public string GetName() { return name; }
         public string GetDayOfWeek() { return dayOfWeek; }

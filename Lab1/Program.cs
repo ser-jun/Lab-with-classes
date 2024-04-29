@@ -90,20 +90,28 @@ namespace Lab1
                         lecture.EditLesson();
                         break;
                     case 15:
-                        Lecture lecture1 = new Lecture("asdasd", "sdasdasd");
+
                         LaboratoryWork laba = new LaboratoryWork(2, "dffwdf");
                         Shedule shedule2 = new Shedule();
-                        shedule2 = laba + shedule2;
+                        shedule2 += laba;
 
-
-
-                        for (int i = 0; i < shedule2.lessons.Count; i++)
+                        foreach (Lesson lesson in shedule2.lessons)
                         {
-
-                            Console.WriteLine(shedule2.lessons[i]);
-
+                            Console.WriteLine(lesson);
                         }
                         break;
+                    case 16:
+                        shedule++;
+                       
+                        break;
+                        case 17:
+                        Shedule shedule3 = new Shedule("3","dferfr");
+                        int d=0;
+                        shedule3=shedule3 << d;
+                        break;
+                        case 18:
+
+                        break; 
                 }
                 GC.Collect();
 

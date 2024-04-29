@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace Lab1
@@ -12,9 +11,12 @@ namespace Lab1
         private string address;
         private string elem;
 
-     
+
         public List<Shedule> shedules = new List<Shedule>();
         public List<Lesson> lessons = new List<Lesson>();
+        public Shedule[] sheduleArray = new Shedule[5];
+
+        int countArr = 0;
         public Shedule()
         {
             this.educationalInstitutionNumber = null;
@@ -52,7 +54,14 @@ namespace Lab1
             this.address = null;
             Console.WriteLine("Вызван деструктор");
         }
+        int GetCountArr()
+        {
+            return countArr;
+        }
+        //void SetShedule(sheduleArray )
+        //{
 
+        //}
         private bool CheckNumber(string num)
         {
             return int.TryParse(num, out _);
@@ -176,16 +185,27 @@ namespace Lab1
         }
 
 
-        public static Shedule operator +(Lesson les, Shedule shed)
+        public static Shedule operator +(Shedule shed, LaboratoryWork lab)
         {
-            shed.lessons.Add(les);
-            return shed ;
+            shed.lessons.Add(lab);
+            return shed;
         }
 
-        //public static Shedule operator ++(Shedule shedule)
-        //{
 
-        //    return null;
-        //}
+        public static Shedule operator ++(Shedule shedule)
+        {
+            for (int i = 0; i < shedule.sheduleArray.Length - 1; i++)
+            {
+                shedule.sheduleArray[i] = new Shedule("asdasd", "sdasda");
+            }
+
+            return shedule;
+        }
+        public static Shedule operator <<(Shedule shed, int a)
+        {
+            Console.WriteLine($"Номер чего-то {shed.educationalInstitutionNumber} " +
+                $"адресс чего-то{shed.address}");
+            return shed;
+        }
     }
 }
