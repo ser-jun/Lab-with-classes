@@ -21,6 +21,12 @@ namespace Lab1
             Console.WriteLine("12- просмотреть лекции");
             Console.WriteLine("13- Удалить лекцию");
             Console.WriteLine("14- редачить лекцию");
+            Console.WriteLine("15- оператор +");
+            Console.WriteLine("16- оператор ++");
+            Console.WriteLine("17- оператор <<");
+            Console.WriteLine("18- оператор сравнения для класса Lecture");
+            Console.WriteLine("19- оператор сравнения для класса LaboratoryWork");
+            Console.WriteLine("20- оператор []");
             Console.WriteLine("0-Выход=вызов деструктора");
         }
         static void Main(string[] args)
@@ -102,7 +108,7 @@ namespace Lab1
                         break;
                     case 16:
                         shedule++;
-                       
+                        Console.WriteLine(shedule);
                         break;
                         case 17:
                         Shedule shedule3 = new Shedule("3","dferfr");
@@ -118,6 +124,13 @@ namespace Lab1
                         LaboratoryWork lab1 = new LaboratoryWork(2, "top");
                         LaboratoryWork lab2 = new LaboratoryWork(5, "top1");
                         Console.WriteLine($"{lab1 > lab2}\n {lab1<lab2} \n {lab1==lab2}\n {lab1!=lab2}");
+                        break;
+                    case 20:
+                 
+                        Shedule shedule6 = new Shedule();                        
+                        shedule6[0] = new LaboratoryWork(2, "ded");                  
+                        LaboratoryWork lab6 = shedule6[0];
+                
                         break;
                 }
                 GC.Collect();

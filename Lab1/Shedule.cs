@@ -190,7 +190,15 @@ namespace Lab1
             shed.lessons.Add(lab);
             return shed;
         }
+        private LaboratoryWork[] laboratoryWorks = new LaboratoryWork[5];
 
+      
+
+        public LaboratoryWork this[int index]
+        {
+            get => laboratoryWorks[index];
+            set => laboratoryWorks[index] = value;
+        }
 
         public static Shedule operator ++(Shedule shedule)
         {
